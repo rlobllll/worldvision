@@ -1,0 +1,15 @@
+@charset "UTF-8" ;
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #222;}
+table {border-collapse: collapse;}
+img {vertical-align: top;}
+        /* ㄴ 폰트 사이즈 관련 */
+fieldset, button, img {border: 0;}
+legend {font-size: 0; color: transparent; text-indent: -9999px;}
+
+input {outline: 0;}
+
+.autoH::after {content: ""; display: block; clear: both;}
+        /* ㄴ ::점 두개나 :점 한개나 (콜론) 상관없음 최신 브라우저에만 적용하겠단 뜻 */

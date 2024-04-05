@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+@import url('reset.css');
+@import url('font.css');
+@import url('common.css');
+
+
+
+/* Visual */
+#visual .model {position: absolute; left: 60%; transform: translateX(-50%); animation: model 500s forwards; top: 30px;}
+/* @keyframes model {
+    0% {transform: translateX(-50%) scale(1.1);}
+    100% {transform: translateX(-50%) scale(1);}
+} */
+#visual .text_box {width: 600px; float: left; margin-top: 180px; word-break: keep-all; position: relative; z-index: 2;}
+#visual .text_box strong {font-size: 40px; font-family: 'Pretendard-Regular'; line-height: 1.3; color: #fff;}
+#visual .text_box p {font-size: 19px; margin: 26px 0; color: #fff;}
+
+.btn_view {background: #f37021; font-size: 19px; color: #fff; padding: 0.9em 2.2em;  display: inline-block; position: relative; overflow: hidden; color:transparent ;}
+.btn_view:before {content: ""; position: absolute; width: 100%; height: 100%; top: 0; left: -110%; background: #7e1300; transition: 0.2s; transform: skewX(50deg);}
+.btn_view:hover:before {left: 0; transform: skewX(0deg);background: #7e1300}
+.btn_view:after {content: attr(data-btnName); position: absolute;  top: 50%;left: 50%;z-index: 2; transform: translate(-50%,-50%); color: #fff;}
+
+
+#section1 {height: 60px; background: #f37021}
+#section1 .centerbox {display: flex; height: 100%;align-items: center; gap: 55px;}
+#section1 h2 {width: 130px; height: 33px; background: #fff; font-size: 16px; display: flex; justify-content: center; align-items: center; color: #453426;}
+#section1 .notice { flex-grow: 1; height: 33px;position: relative; overflow: hidden;}
+#section1 .notice ul {height: 100%; position: absolute; width: 100%;}
+#section1 li {height: 100%; }
+#section1 li a {color: #fff; display: block; height: 100%; display: flex; align-items: center;}
+#section1 li a:hover {text-decoration: underline; text-decoration-color:#7e1300 ; text-underline-position: under;}
+
+
+#section2 .centerbox {display: flex; padding: 60px 0; gap: 6.7%;}
+#section2 .centerbox .board { flex-grow: 1; flex-basis: 0; } /* flex-basis:0 기본크기를 0으로 주겠다. */
+#section2 .board h2 {font-size: 24px; margin-bottom: 20px; position: relative;}
+#section2 .board h2 .more {position: absolute; right: 0;width: 29px; height: 29px; background:#7e1300; text-indent: -9999px; font-size: 0; color: transparent; overflow: hidden;}
+#section2 .board h2 .more::before,
+#section2 .board h2 .more::after {content: ""; position: absolute; width: 18px; height: 2px; background: #ffffff; top: 12px; left: 6px; transition: 0.3s;}
+#section2 .board h2 .more:hover:before {transform: rotate(90deg);}
+#section2 .board h2 .more:hover:after {transform: rotate(180deg);}
+#section2 .board h2 .more:after {transform: rotate(90deg);}
+#section2 .board li {height: 52px;line-height: 52px; border-bottom: 1px solid #d6d6d6;}
+#section2 .board li a {display: block;}
+#section2 .board li span.title {float: left; width: 70%; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}    /* text-overflow: ellipsis는 문장이 길어질때 뒤에  ... 표시되도록 */
+#section2 .board li span.date {float: right; width: 30%;text-align: right; font-size: 14px; color: #777;}
+#section2 .board:nth-child(2) h2 .more {background:  #f37021}
+
+
+#section3 { background: url(../images/baby_copy.png) no-repeat center top ; background-attachment: fixed;}
+#section3 .centerbox {padding: 60px 0;font-family: 'Pretendard-Thin';}
+#section3 h2 {font-size: 19px; color: #fff; text-align: center; max-width: 540px; margin: 0 auto; }
+#section3 h2 span {color: #f37021; background: #000;}
+#section3 ul.cont {margin-top: 40px; display: flex; flex-wrap: wrap; gap: 21px; justify-content: center;}
+#section3 ul.cont li {width: 310px; height: 130px;   text-align: center; transition: 0.1s; position: relative; transform-style: preserve-3d ; perspective: 800px;}
+#section3 ul.cont li:hover a{background: rgba(0, 0, 0, 0.2);}
+#section3 ul.cont li a { display: flex; justify-content: center;align-items: center; flex-direction: column; height: 100%; position: absolute; top: 0; left: 0; width: 100%; backface-visibility: hidden; transition: 0.4s;background: rgba(255, 255, 255, 0.3);}
+#section3 ul.cont li a.back {transform: rotateY(-180deg);}
+#section3 ul.cont li:hover a.front {transform: rotateY(180deg);}
+#section3 ul.cont li:hover a.back {transform: rotateY(0deg);}
+#section3 ul.cont li h3 {font-size: 22px; color: #fff; font-family: 'Pretendard-Thin'; margin-bottom: 10px;}
+#section3 ul.cont li p {font-size: 14px; color: #fff; padding: 0 35px;}
+
+
+#section4 .centerbox {padding: 60px 0;}
+#section4 ul.cont {display: flex; justify-content: center; gap: 21px;}
+#section4 ul.cont li {width: 447px; height: 150px; background: #f37021; border-radius: 20px; position: relative; overflow: hidden;}
+#section4 ul.cont li a {color: #fff; display: block; height: 100%; padding: 44px 0 0 47px; box-sizing: border-box;}
+#section4 ul.cont li a h3 { height: 33px;font-size: 22px; font-family: 'Pretendard-Thin';}
+#section4 ul.cont li a h3 span {float: left; width: 29px; height: 29px; background:#fff; margin-right: 8px; border-radius: 50%;margin-right: 8px;}
+#section4 ul.cont li a h3 span i {margin: 5px; font-size: 18px; color:#7e1300; }
+#section4 ul.cont li .bg_icon {position: absolute; width: 250px; right: -80px; bottom: -100px; }
+#section4 ul.cont :nth-child(1) .bg_icon svg {opacity: 0.3;}
+#section4 ul.cont :nth-child(1):hover .bg_icon svg circle {fill: #fff}
+#section4 ul.cont :nth-child(1) .bg_icon svg path {transition: 10s linear; transform-origin: center;}
+#section4 ul.cont :nth-child(1):hover .bg_icon svg path {transform: rotate(360deg);}
+#section4 ul.cont li:nth-child(2) .bg_icon {bottom: -10px; right: -20px; width: 200px;}
+#section4 ul.cont li:nth-child(2) .bg_icon .cls-1 {fill: transparent; }
+#section4 ul.cont li:nth-child(2) .bg_icon .cls-2 {fill: #fff; opacity: 0.3;}
+#section4 ul.cont li:nth-child(2) .bg_icon g:nth-child(2) .cls-2 {transform: translateX(0); transition: 0.3s; stroke-width: 8px; stroke: #fff; opacity: 0.3;}
+#section4 ul.cont li:nth-child(2):hover .bg_icon g:nth-child(2) .cls-2 {transform: translateX(-58px);}
+
+
+#section5 {background: #f1f1f1;}
+#section5 .centerbox {padding: 60px 0;}
+#section5 h2 {font-size: 19px; color: #333; text-align: center; max-width: 540px; margin: 0 auto; font-family: 'Pretendard-Thin'; text-transform: uppercase;} /*  text-transform: uppercase 텍스트가 소문자일 경우 대문자로 바꿔줌 */
+#section5 ul {margin-top: 40px;
+    display: grid; 
+    grid-template-rows: 150px 150px 150px;      /* li의 높이를 주는 것 150씩-3줄 */
+    /* ㄴ 이렇게 적어도 됨 = grid-template-rows: repeat(3, 150px); */
+    grid-template-columns: 0.6fr 1fr 0.6fr 1fr;
+    /* ㄴ 이렇게 적어도 됨  = grid-template-columns: 194px 294px 194px 294px; */
+    grid-gap: 20px;     /* gap: 20px 이라고 적어도 됨 */
+}
+#section5 ul li {background: rgb(255, 176, 107); position: relative; overflow: hidden; color: #fff;}
+#section5 ul li:nth-child(1) {
+    grid-row: span 2;  /* 위아래 기준(세로) 첫번째 칸부터 두번째 칸까지 합치겠다 라는 뜻 */
+    /* ㄴ 이렇게 적어도 됨 = grid-row: 1/3;  위아래 기준 첫번째줄부터 세번째줄까지 합치겠다 라는 뜻*/
+} 
+#section5 ul li:nth-child(5) {
+    grid-column: span 2;  /* 옆 기준(가로) 첫번째 칸부터 두번째 칸까지 합치겠다 라는 뜻 */
+}
+#section5 ul li:nth-child(9) {
+    grid-column: span 2;  /* 옆 기준(가로) 첫번째 칸부터 두번째 칸까지 합치겠다 라는 뜻 */
+}
+#section5 li a { display: flex; height: 100%; padding: 20px; box-sizing: border-box;  flex-direction: column;color: #fff; font-family:'Pretendard-Light';}
+#section5 li a h3 {font-size: 24px; margin-bottom: 6px; ;}
+#section5 li a span.ex {flex-grow: 1; } /* 나머지 공간 자동으로 배치되게끔 하는 거 */
+#section5 li a span.cate {font-size: 14px;}
+#section5 li a span.num {position: absolute; right: -15px;bottom: -30px; font-size: 100px; font-weight: bold; opacity: 0.3;}
+
+#section5 li:nth-child(1) {background: #665343} 
+#section5 li:nth-child(2) {background: #734f2f} 
+#section5 li:nth-child(3) {background: #ad7f57} 
+#section5 li:nth-child(4) {background: #bb9675} 
+#section5 li:nth-child(5) {background: #966f4d} 
+#section5 li:nth-child(6) {background: #817264} 
+#section5 li:nth-child(7) {background: #7f5f42} 
+#section5 li:nth-child(8) {background: #bb9675} 
+#section5 li:nth-child(9) {background: #8e7f74} 
+
+footer .centerbox {}
+footer .centerbox h1 {width: 200px;height: 70px; float: left; margin-top: 90px; margin-left: 50px;}
+footer .centerbox h1 img {width: 100%;}
+footer .centerbox a { font-family: 'Pretendard-Thin';color: #fff;}
+footer .centerbox .foot_menu {width: 750px; height: 80px; float: left; margin-top: 80px; margin-left: 30px; }
+footer .centerbox .foot_menu .call ul {width: 400px; float: left; margin-left: 50px;}
+footer .centerbox .foot_menu .info ul {width: 150px; float: left; margin-left: 50px;}
+
+
+
+
+/* 서브페이지 선언문 */
+#content_box h2 {width: 620px; height: 95px; line-height: 95px; margin: 0 auto; border-bottom: 1px solid #f37021; text-align: center; font-size: 28px;}
+#content_box em {font-size: 20px; color: #453426; font-style: normal; display: block;text-align: center; margin-top: 80px;}
+#content_box .eng {color: #f37021; font-size: 20px; display: block; text-align: center; height: 135px; border-bottom: 1px solid #f37021; width: 620px; margin: 30px auto;}
+
+/* 서브페이지 소개 */
+.introduction h3 {width: 500px; margin: 130px auto 0 auto; text-align: center; font-size: 25px;}
+.introduction .cont {display: flex; gap: 43px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+.introduction .cont li {width: 510px; height: 430px; }
+.introduction .cont li figure {height: 300px; background: #8c7070;}
+.introduction .cont li h4 {line-height: 60px; font-size: 18px; padding-left: 26px;}
+.introduction .cont li .text {padding: 0 26px;}
+.introduction .cont li .text p {line-height: 1.3; margin-bottom: 13px; word-break: keep-all; position: relative;}
+.introduction .cont li .text p:before {content: ""; position: absolute; width: 4px; height: 4px; background: #000; top: 7px;left: -10px;}
+
+.introduction .cont figure {width: 100%;}
+
+
+
+
+
+
+/* 로그인 */
+/* .login_page .login_box {max-width: 770px; margin: 40px auto 0 auto; border: 1px solid #c7c7c7;}
+.login_page .login_box form {background: #fff; padding: 35px 48px;}
+
+.login_page .login_box .input_box li {position: relative;}
+.login_page .login_box .input_box li .eye_box {position: absolute; right: 10px ;top: 16px; cursor: pointer;}
+.eye_box .eye_off {display: none;}
+
+.login_page .login_box input[type=text],
+.login_page .login_box input[type=password] 
+{width: 100%; height: 53px; border: 1px solid #c7c7c7; font-size: 18px; text-indent: 8px; margin-bottom: 10px;}
+                        
+.login_page .login_box input::placeholder {font-size: 14px;} */
+        /* ㄴ : or ::  <- before / after 는  둘다 가능 */
+        /* ㄴ :: <- placeholder는 꼭 두개 쓰기 / 헷갈리면 그냥 다 :: 두개씩 쓰기 */
+
+/* .login_page .login_box input:focus {border: 1px solid #f37021}
+
+.login_page .login_box button {width: 100%;height: 53px;margin-top: 20px; font-size: 18px; background: #f37021;border-radius: 10px ; color: #fff; border: 0; cursor: pointer;}
+.login_page .login_box .save_id {margin-top: 10px; }
+.login_page .login_box .save_id input[type=checkbox] {width: 20px;height: 20px; float: left; margin-right: 8px; display: none;}
+.login_page .login_box .save_id .id_check {float: left; width: 20px; height: 20px; margin-right: 8px; color: #ccc; margin-top: -4px;}
+.login_page .login_box .save_id label {color: #777; cursor: pointer;}
+.login_page .login_box .save_id input[type=checkbox]:checked ~ label .id_check {color: #222;}
+.login_page .login_box .save_id input[type=checkbox]:checked ~ label {color: #000;}
+
+.login_page .login_box .member_q {background: #d8d8d8;padding: 35px 48px; font-size: 15px;}
+.login_page .login_box .member_q li {height: 36px; margin-bottom: 10px; line-height: 36px;}
+.login_page .login_box .member_q li p {float: left;}
+.login_page .login_box .member_q li a {float: right; background: #f37021; color: #fff; padding: 0 27px;} */
+
+
+/* 로그인 연습 */
+.login_page .login_box {margin: 10px auto; width: 700px; height: 700px; border: 1px solid #000;}
+.login_page .login_box form {padding: 35px;}
+.login_page .login_box ul li input {width: 500px; height: 50px;}
+
+.login_page .login_box ul li {position: relative;}
+.login_page .login_box ul li .eye_box {position: absolute; top: 30%; right: 30%;}
+
+
+
+
+
+
+
+
+/* 회원가입 */
+.join_box .go_joinbox {display: flex; justify-content: center;}
+.join_box a.go_join {border: 1px solid #bbb; width: 300px; height: 200px; margin: 30px 20px; border-radius: 3px; text-align: center; display: flex; flex-direction: column; justify-content: center; gap: 10px;}
+.join_box a.go_join span {font-size: 80px ;}
+
+.join_box a.go_join:hover span{color:#f37021;}
+
+
+
+.join_box .join_people {display: none;border: 10px solid red;}
+.join_box .join_company {display: none;border: 10px solid blue;}
+
+
+#content_box h2.b_line {border-bottom: 0;}
+.join_box .joinpage {border-top: 2px solid #000;}
+.join_box .joinpage li {border-bottom: 1px solid #bfbfbf;display: flex; }
+.join_box .joinpage li label {width: 170px; background: #f9f9f9; text-indent: 30px; display: flex; align-items: center;font-size: 18px; flex-shrink: 0;}
+.join_box .joinpage li.pilsu label span {position: relative;}
+.join_box .joinpage li.pilsu label span:before {content: "*"; position: absolute; right: -15px; top: -5px; color:#f37021;}
+.join_box .joinpage li .input_area {background: #fff; flex-grow: 1; padding: 14px 0 14px 20px; }
+.join_box .joinpage li .input_area input[type=text], 
+.join_box .joinpage li .input_area input[type=password],
+.join_box .joinpage li .input_area input[type=tel],
+.join_box .joinpage li .input_area input[type=email]
+{width: 458px;height: 44px; border: 1px solid #e2e2e2; text-indent: 10px; font-size: 18px;}
+.join_box .joinpage li .input_area .ex {font-size: 14px;margin-top: 5px;}
+
+.join_box .joinpage li .input_area select {width: 200px;height: 44px; border: 1px solid #e2e2e2; text-indent: 10px; font-size: 18px;}
+.join_box .joinpage li .input_area input.phone {width: 290px;}
+
+.join_box .joinpage li .input_area input::placeholder{color: #999;}
+.join_box .joinpage li .input_area input#address_input {width: 300px; margin-bottom: 10px;}
+.join_box .joinpage li .input_area a.btn_addr {width: 94px; height: 46px; background: #8c8c8c; display: inline-block; vertical-align: top; line-height: 46px; text-align: center; margin-right: 10%;}
+.join_box .joinpage li .input_area input#address_input2 {width: 46%;}
+.join_box .joinpage li .input_area input#address_input3 {width: 46%;}
+
+.join_box .joinpage li .input_area label {background: none; height: 44px; float: left; width: 100px; text-indent: 0; cursor: pointer;}
+.join_box .joinpage li .input_area label span.radio_sign {float: left;width: 20px;height: 20px;border: 1px solid #f37021;; border-radius: 50%; margin-right: 10px;}
+.join_box .joinpage li .input_area label span.radio_sign:after {content: ""; position: absolute; width: 10px;height: 10px;border-radius: 50%; background: #f37021;; left: 5px;top: 5px; display: none;}
+.join_box .joinpage li .input_area label span:before {display: none;}
+
+.join_box .joinpage li .input_area label input[type=radio] {display: none}
+.join_box .joinpage li .input_area label input[type=radio]:checked ~ span:after {display: block;}
+
+
+/* 이용약관 */
+.join_box .joinpage .input_area .textarea_box { width: 700px; height: 300px;border: 1px solid #bfbfbf; padding: 30px; border-radius: 0 50px 0 50px;}
+.join_box .joinpage .input_area textarea.use_rule {resize: none; width: 100%; height: 100%; border: 0 ; font-size: 16px; padding: 20px; box-sizing: border-box; /* white-space: pre-wrap; */}
+
+.join_box .joinpage .input_area .rule_box label {width: auto; cursor: pointer; color: #888;}
+
+
+.join_box .joinpage .input_area .rule_box label span {color: #ccc;}
+.join_box .joinpage .input_area .rule_box input[type=checkbox] {display: none;}
+
+.join_box .joinpage .input_area .rule_box input[type=checkbox]:checked ~ label {color: #000;}
+.join_box .joinpage .input_area .rule_box input[type=checkbox]:checked ~ label span {color: #000;}
+
+.btns_box {margin-top: 20px; display: flex; justify-content: center;}
+.btn1 {padding: 20px 90px; background: #222; color: #fff;font-size: 20px; border-radius: 10px; cursor: pointer;}
+.join_ok {}
+
